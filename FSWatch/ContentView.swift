@@ -6,12 +6,29 @@
 //
 
 import SwiftUI
+import EonilFSEvents
 
 struct ContentView: View {
+    @State var files = [String]()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            List {
+                ForEach(0..<files.count, id: \.self) { index in
+                    Text(files[index])
+                }
+            }
+        }
+        .padding()
+        .frame(width: 1000, height: 600)
+        .onReceive(NotificationCenter.default.publisher(for: .filesChanged)) { event in
+            if let fileEvent = event.object as? EonilFSEventsEvent  {
+                files.insert("\(fileEvent.flag) \(fileEvent.path)", at: 0)
+            }
+        }
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

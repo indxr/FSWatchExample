@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		300D33D324E82F7F00B2CA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300D33D224E82F7F00B2CA19 /* Assets.xcassets */; };
 		300D33D624E82F7F00B2CA19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300D33D524E82F7F00B2CA19 /* Preview Assets.xcassets */; };
 		300D33D924E82F7F00B2CA19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300D33D724E82F7F00B2CA19 /* Main.storyboard */; };
+		300D33E324E82FC100B2CA19 /* EonilFSEvents in Frameworks */ = {isa = PBXBuildFile; productRef = 300D33E224E82FC100B2CA19 /* EonilFSEvents */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300D33E324E82FC100B2CA19 /* EonilFSEvents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +92,9 @@
 			dependencies = (
 			);
 			name = FSWatch;
+			packageProductDependencies = (
+				300D33E224E82FC100B2CA19 /* EonilFSEvents */,
+			);
 			productName = FSWatch;
 			productReference = 300D33CB24E82F7D00B2CA19 /* FSWatch.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 300D33C224E82F7D00B2CA19;
+			packageReferences = (
+				300D33E124E82FC100B2CA19 /* XCRemoteSwiftPackageReference "FSEvents" */,
+			);
 			productRefGroup = 300D33CC24E82F7D00B2CA19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		300D33E124E82FC100B2CA19 /* XCRemoteSwiftPackageReference "FSEvents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eonil/FSEvents";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		300D33E224E82FC100B2CA19 /* EonilFSEvents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 300D33E124E82FC100B2CA19 /* XCRemoteSwiftPackageReference "FSEvents" */;
+			productName = EonilFSEvents;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 300D33C324E82F7D00B2CA19 /* Project object */;
 }
